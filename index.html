@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أسامة شحره | خبير الحلول الرقمية المتكاملة</title>
     
+    <!-- SEO Optimization -->
+    <meta name="description" content="أسامة شحره: مطور ويب مستقل، مصمم UI/UX، خبير تسويق رقمي، ومحلل بيانات. أقدم حلولاً رقمية متكاملة للمشاريع والمتاجر الإلكترونية والحملات الإعلانية. اكتشف أعمالي وتواصل معي لتحويل فكرتك إلى واقع.">
+    <meta name="keywords" content="أسامة شحره، مطور ويب، برمجة، تصميم مواقع، تصميم متاجر إلكترونية، تسويق رقمي، حملات إعلانية، تحليل بيانات، Power BI، UI/UX، PHP، JavaScript، MySQL، ووردبريس، Shopify، WooCommerce، مستقل، خمسات، كفيل، عمل حر، خدمات رقمية، استشارات تقنية، اليمن، إب">
+    <meta name="author" content="أسامة شحره">
+    <link rel="canonical" href="https://your-domain.com"> <!-- Replace with your actual domain later -->
+    
     <!-- Chosen Palette: Warm Neutrals -->
     <!-- Application Structure Plan: A single-page application with a fixed navigation bar for smooth scrolling. The core is an interactive, filterable portfolio section that uses modals to display project details. This structure was chosen for its modern feel, ease of navigation, and ability to showcase a diverse range of projects without overwhelming the user, guiding them from a high-level overview to detailed case studies. A new section "AI-Powered Idea Development" has been added to engage visitors by demonstrating how Osamah's multidisciplinary skills can refine their project ideas. -->
     <!-- Visualization & Content Choices: Portfolio projects are dynamically rendered from a JS object into a filterable grid, a user-friendly way to organize diverse work. Clicking a project opens a modal for detailed viewing, keeping the main layout clean. This interaction is handled by vanilla JS. The new AI feature leverages the Gemini API to take user input (a project idea) and generate a detailed response on how Osamah's diverse skills can contribute, presented dynamically in a text area. All visual elements, including icons, are created using HTML/CSS and Unicode, fully avoiding SVG and Mermaid JS as required. -->
@@ -82,6 +88,28 @@
                 transform: rotate(360deg);
             }
         }
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #25D366; /* WhatsApp green */
+            color: white;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            z-index: 1000;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+            background-color: #1DA851;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -89,7 +117,9 @@
     <!-- Header & Navigation -->
     <header id="header" class="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold section-title">أسامة شحره</a>
+            <a href="#hero" class="text-2xl font-extrabold section-title flex items-center">
+                <span class="text-emerald-600 ml-2">✨</span> أسامة شحره
+            </a>
             <div class="hidden md:flex space-x-8 space-x-reverse items-center">
                 <a href="#about" class="text-stone-600 hover:text-emerald-600 transition">عني</a>
                 <a href="#portfolio" class="text-stone-600 hover:text-emerald-600 transition">أعمالي</a>
@@ -275,6 +305,11 @@
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/967734619110" target="_blank" class="whatsapp-float">
+        &#x1F4AC; <!-- Unicode for speech bubble/message icon -->
+    </a>
+
     <!-- Modal Structure -->
     <div id="project-modal" class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 opacity-0 invisible">
         <div class="modal-content bg-white w-full max-w-4xl max-h-[90vh] rounded-lg shadow-2xl overflow-y-auto transform scale-95">
@@ -315,14 +350,14 @@
                 });
             });
 
-            // Project Data
+            // Project Data - IMPORTANT: Consider replacing placehold.co images with your actual project screenshots from Google Sites or other sources.
             const projects = [
                 {
                     id: 1,
                     title: 'متجر ثينك ثرين للأثاث',
                     category: 'design',
-                    thumbnail: 'https://placehold.co/600x400/a3e635/1c1917?text=Think+Green',
-                    image: 'https://placehold.co/1200x800/a3e635/1c1917?text=Think+Green+Store',
+                    thumbnail: 'https://placehold.co/600x400/a3e635/1c1917?text=Think+Green', /* Replace with actual image link from your Google Site if possible */
+                    image: 'https://placehold.co/1200x800/a3e635/1c1917?text=Think+Green+Store', /* Replace with actual image link */
                     description: 'تطوير وإعداد متكامل لمتجر إلكتروني احترافي متخصص في الأثاث. يشمل العمل تصميم واجهة وتجربة مستخدم جذابة، إعداد بوابات الدفع وشركات الشحن، وربط كافة الخدمات الأساسية لضمان تجربة تسوق سلسة. بالإضافة إلى إدارة حملات إعلانية لتحقيق أفضل النتائج.',
                     tech: ['تصميم متاجر', 'UI/UX', 'إدارة إعلانات', 'Shopify'],
                     liveLink: 'https://thinkgreen.sa/'
@@ -331,8 +366,8 @@
                     id: 2,
                     title: 'نظام إدارة الشحن (البركة للنقل)',
                     category: 'dev',
-                    thumbnail: 'https://placehold.co/600x400/38bdf8/1c1917?text=Al+Baraka+System',
-                    image: 'https://placehold.co/1200x800/38bdf8/1c1917?text=Logistics+Dashboard',
+                    thumbnail: 'https://placehold.co/600x400/38bdf8/1c1917?text=Al+Baraka+System', /* Replace with actual image link */
+                    image: 'https://placehold.co/1200x800/38bdf8/1c1917?text=Logistics+Dashboard', /* Replace with actual image link */
                     description: 'قيادة عملية تطوير ونشر نظام متكامل لإدارة اللوجستيات والشحن. نجح النظام في تحسين كفاءة العمل بنسبة 80% مقارنة بالعمليات اليدوية، من خلال إدارة آلاف سجلات الشحنات، وتطوير وحدات مصادقة آمنة، ودمج إشعارات SMS والبريد الإلكتروني.',
                     tech: ['PHP', 'JavaScript', 'MySQL', 'تطوير أنظمة', 'Bootstrap'],
                     liveLink: 'https://albaraka.wuaze.com/index.php'
@@ -341,8 +376,8 @@
                     id: 3,
                     title: 'لوحة تحكم بيانات (INTERSOS)',
                     category: 'data',
-                    thumbnail: 'https://placehold.co/600x400/f9a8d4/1c1917?text=Power+BI',
-                    image: 'https://placehold.co/1200x800/f9a8d4/1c1917?text=Data+Analytics+Dashboard',
+                    thumbnail: 'https://placehold.co/600x400/f9a8d4/1c1917?text=Power+BI', /* Replace with actual image link */
+                    image: 'https://placehold.co/1200x800/f9a8d4/1c1917?text=Data+Analytics+Dashboard', /* Replace with actual image link */
                     description: 'تصميم وتطبيق لوحات معلومات آلية وتفاعلية باستخدام Power BI لتحويل البيانات المعقدة إلى رؤى قابلة للتنفيذ. المشروع قلل وقت التحليل بنسبة 30% ومكّن من اتخاذ قرارات آنية أثرت على أكثر من 60,000 مستفيد.',
                     tech: ['Power BI', 'تحليل بيانات', 'تصور البيانات', 'Excel'],
                     liveLink: 'https://app.powerbi.com/view?r=eyJrIjoiM2VhMGEwZGQtMDMyNi00MjZjLWIxYTAtMmM2M2ZjZGZmMjgzIiwidCI6ImIzYTkwNjYzLWM1MTItNDlmMS04MDgwLTMyNmYwYTRiYTQzMCIsImMiOjl9'
@@ -351,8 +386,8 @@
                     id: 4,
                     title: 'متجر رويا للمجوهرات',
                     category: 'design',
-                    thumbnail: 'https://placehold.co/600x400/fcd34d/1c1917?text=Roya+Jewelry',
-                    image: 'https://placehold.co/1200x800/fcd34d/1c1917?text=Roya+Jewelry+Store',
+                    thumbnail: 'https://placehold.co/600x400/fcd34d/1c1917?text=Roya+Jewelry', /* Replace with actual image link */
+                    image: 'https://placehold.co/1200x800/fcd34d/1c1917?text=Roya+Jewelry+Store', /* Replace with actual image link */
                     description: 'تصميم وإعداد متجر إلكتروني فاخر للمجوهرات والإكسسوارات. تم التركيز على تصميم يعكس فخامة المنتجات مع تجربة مستخدم سهلة، وربط المتجر بمنصات التواصل الاجتماعي لإدارة الحملات التسويقية.',
                     tech: ['تصميم متاجر', 'UI/UX', 'سلة', 'تسويق رقمي'],
                     liveLink: 'https://royasa.com/'
@@ -361,18 +396,588 @@
                     id: 5,
                     title: 'إدارة حملات إعلانية',
                     category: 'marketing',
-                    thumbnail: 'https://placehold.co/600x400/fb923c/1c1917?text=Ad+Campaigns',
-                    image: 'https://placehold.co/1200x800/fb923c/1c1917?text=Digital+Marketing',
+                    thumbnail: 'https://placehold.co/600x400/fb923c/1c1917?text=Ad+Campaigns', /* Replace with actual image link */
+                    image: 'https://placehold.co/1200x800/fb923c/1c1917?text=Digital+Marketing', /* Replace with actual image link */
                     description: 'تصميم وتنفيذ حملات إعلانية مستهدفة عبر منصات متعددة مثل Google, Meta, TikTok, و Snapchat. أركز على تحليل الجمهور، تحسين الإنفاق الإعلاني (ROAS)، وتقديم تقارير أداء دورية لتحقيق أهداف العملاء سواء كانت زيادة المبيعات أو الوعي بالعلامة التجارية.',
                     tech: ['Google Ads', 'Meta Ads', 'TikTok Ads', 'تحليل الأداء'],
-                    liveLink: '#contact'
+                    liveLink: '#contact' /* This links to the contact section within the SPA */
                 },
                 {
                     id: 6,
                     title: 'موقع مؤسسة محاماة',
                     category: 'dev',
-                    thumbnail: 'https://placehold.co/600x400/9ca3af/1c1917?text=Wusata+Law',
-                    image: 'https://placehold.co/1200x800/9ca3af/1c1917?text=Law+Firm+Website',
+                    thumbnail: 'https://placehold.co/600x400/9ca3af/1c1917?text=Wusata+Law', /* Replace with actual image link */
+                    image: 'https://placehold.co/1200x800/9ca3af/1c1917?text=Law+Firm+Website', /* Replace with actual image link */
+                    description: 'تصميم وتطوير موقع ويب تعريفي احترافي لمؤسسة محاماة، مع التركيز على عرض الخدمات القانونية وفريق العمل بطريقة واضحة ومنظمة، مما يعزز التواجد الرقمي للمؤسسة ويبني الثقة مع العملاء.',
+                    tech: ['WordPress', 'تصميم ويب', 'CSS', 'PHP'],
+                    liveLink: 'https://wusata-sa.com/'
+                },
+
+            ];
+
+            const projectsGrid = document.getElementById('projects-grid');
+            const filters = document.querySelectorAll('.portfolio-filter button');
+            const modal = document.getElementById('project-modal');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+            const modalTitle = document.getElementById('modal-title');
+            const modalImageContainer = document.getElementById('modal-image-container');
+            const modalDescription = document.getElementById('modal-description');
+            const modalTech = document.getElementById('modal-tech');
+            const modalLink = document.getElementById('modal-link');
+
+            // LLM Integration Elements
+            const projectIdeaInput = document.getElementById('project-idea-input');
+            const generateIdeaBtn = document.getElementById('generate-idea-btn');
+            const ideaOutputContainer = document.getElementById('idea-output-container');
+            const ideaOutput = document.getElementById('idea-output');
+            const loadingSpinner = document.getElementById('loading-spinner');
+            const buttonText = document.getElementById('button-text');
+            const errorMessage = document.getElementById('error-message');
+
+
+            // Render projects function
+            function renderProjects(filter = 'all') {
+                projectsGrid.innerHTML = '';
+                const filteredProjects = projects.filter(p => filter === 'all' || p.category === filter);
+
+                filteredProjects.forEach(project => {
+                    const projectCard = document.createElement('div');
+                    projectCard.className = 'project-card bg-white rounded-lg shadow-md overflow-hidden cursor-pointer';
+                    projectCard.setAttribute('data-id', project.id);
+                    projectCard.innerHTML = `
+                        <img src="${project.thumbnail}" alt="${project.title}" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-stone-800">${project.title}</h3>
+                            <p class="text-sm text-emerald-600 capitalize">${project.tech[0]}</p>
+                        </div>
+                    `;
+                    projectsGrid.appendChild(projectCard);
+                });
+
+                 // Add click listeners for new cards
+                document.querySelectorAll('.project-card').forEach(card => {
+                    card.addEventListener('click', () => openModal(card.dataset.id));
+                });
+            }
+
+            // Filter functionality
+            filters.forEach(button => {
+                button.addEventListener('click', () => {
+                    filters.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    renderProjects(button.dataset.filter);
+                });
+            });
+
+            // Modal functionality
+            function openModal(projectId) {
+                const project = projects.find(p => p.id == projectId);
+                if (!project) return;
+                
+                modalTitle.textContent = project.title;
+                modalImageContainer.innerHTML = `<img src="${project.image}" alt="${project.title}" class="w-full rounded-lg object-cover">`;
+                modalDescription.textContent = project.description;
+                
+                modalTech.innerHTML = '';
+                project.tech.forEach(techItem => {
+                    const techTag = document.createElement('span');
+                    techTag.className = 'bg-stone-200 text-stone-700 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full';
+                    techTag.textContent = techItem;
+                    modalTech.appendChild(techTag);
+                });
+
+                modalLink.href = project.liveLink;
+
+                modal.classList.remove('invisible', 'opacity-0');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.add('invisible', 'opacity-0');
+                document.body.style.overflow = 'auto';
+            }
+
+            modalCloseBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+            
+            // LLM Integration Logic
+            generateIdeaBtn.addEventListener('click', async () => {
+                const idea = projectIdeaInput.value.trim();
+                if (!idea) {
+                    errorMessage.textContent = 'الرجاء إدخال فكرة مشروعك.';
+                    errorMessage.classList.remove('hidden');
+                    return;
+                }
+
+                errorMessage.classList.add('hidden');
+                ideaOutputContainer.classList.add('hidden');
+                loadingSpinner.classList.remove('hidden');
+                buttonText.classList.add('hidden');
+                generateIdeaBtn.disabled = true;
+
+                try {
+                    let chatHistory = [];
+                    const prompt = `أنت خبير في تطوير الويب (PHP, JavaScript, MySQL, WordPress)، تصميم واجهة المستخدم/تجربة المستخدم (Figma, Adobe XD)، التسويق الرقمي (Google Ads, Meta Ads, TikTok Ads, Snapchat Ads)، وتحليل البيانات (Power BI, Excel). بناءً على هذه المهارات، كيف يمكنني (أسامة شحره) أن أخدم المشروع التالي؟ "${idea}". الرجاء تقديم إجابة مفصلة ومقترحات تطبيقية، مع تسليط الضوء على كيفية دمج هذه الخبرات المتعددة لخدمة المشروع.`;
+                    
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; 
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                    
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        ideaOutput.textContent = text;
+                        ideaOutputContainer.classList.remove('hidden');
+                    } else {
+                        errorMessage.textContent = 'لم يتمكن الذكاء الاصطناعي من توليد استجابة. يرجى المحاولة مرة أخرى.';
+                        errorMessage.classList.remove('hidden');
+                    }
+                } catch (error) {
+                    console.error('Error calling Gemini API:', error);
+                    errorMessage.textContent = 'حدث خطأ في الاتصال بالذكاء الاصطناعي. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.';
+                    errorMessage.classList.remove('hidden');
+                } finally {
+                    loadingSpinner.classList.add('hidden');
+                    buttonText.classList.remove('hidden');
+                    generateIdeaBtn.disabled = false;
+                }
+            });
+
+            // Initial render
+            renderProjects();
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أسامة شحره | خبير الحلول الرقمية المتكاملة</title>
+    
+    <!-- SEO Optimization -->
+    <meta name="description" content="أسامة شحره: مطور ويب مستقل، مصمم UI/UX، خبير تسويق رقمي، ومحلل بيانات. أقدم حلولاً رقمية متكاملة للمشاريع والمتاجر الإلكترونية والحملات الإعلانية. اكتشف أعمالي وتواصل معي لتحويل فكرتك إلى واقع.">
+    <meta name="keywords" content="أسامة شحره، مطور ويب، برمجة، تصميم مواقع، تصميم متاجر إلكترونية، تسويق رقمي، حملات إعلانية، تحليل بيانات، Power BI، UI/UX، PHP، JavaScript، MySQL، ووردبريس، Shopify، WooCommerce، مستقل، خمسات، كفيل، عمل حر، خدمات رقمية، استشارات تقنية، اليمن، إب">
+    <meta name="author" content="أسامة شحره">
+    <link rel="canonical" href="https://your-domain.com"> <!-- Replace with your actual domain later -->
+    
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: A single-page application with a fixed navigation bar for smooth scrolling. The core is an interactive, filterable portfolio section that uses modals to display project details. This structure was chosen for its modern feel, ease of navigation, and ability to showcase a diverse range of projects without overwhelming the user, guiding them from a high-level overview to detailed case studies. A new section "AI-Powered Idea Development" has been added to engage visitors by demonstrating how Osamah's multidisciplinary skills can refine their project ideas. -->
+    <!-- Visualization & Content Choices: Portfolio projects are dynamically rendered from a JS object into a filterable grid, a user-friendly way to organize diverse work. Clicking a project opens a modal for detailed viewing, keeping the main layout clean. This interaction is handled by vanilla JS. The new AI feature leverages the Gemini API to take user input (a project idea) and generate a detailed response on how Osamah's diverse skills can contribute, presented dynamically in a text area. All visual elements, including icons, are created using HTML/CSS and Unicode, fully avoiding SVG and Mermaid JS as required. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f8f7f5; /* A slightly warmer white */
+            color: #44403c; /* stone-700 */
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(248, 247, 245, 0.95) 0%, rgba(232, 230, 227, 0.98) 100%);
+        }
+        .section-title {
+            color: #292524; /* stone-800 */
+            font-weight: 800;
+        }
+        .accent-color {
+            color: #047857; /* emerald-700 */
+        }
+        .btn-primary {
+            background-color: #059669; /* emerald-600 */
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #047857; /* emerald-700 */
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #059669; /* emerald-600 */
+            border: 2px solid #059669;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #059669;
+            color: white;
+        }
+        .portfolio-filter button.active {
+            background-color: #059669;
+            color: white;
+            border-color: #059669;
+        }
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #059669;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #25D366; /* WhatsApp green */
+            color: white;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            z-index: 1000;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+            background-color: #1DA851;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-extrabold section-title flex items-center">
+                <span class="text-emerald-600 ml-2">✨</span> أسامة شحره
+            </a>
+            <div class="hidden md:flex space-x-8 space-x-reverse items-center">
+                <a href="#about" class="text-stone-600 hover:text-emerald-600 transition">عني</a>
+                <a href="#portfolio" class="text-stone-600 hover:text-emerald-600 transition">أعمالي</a>
+                <a href="#services" class="text-stone-600 hover:text-emerald-600 transition">خدماتي</a>
+                <a href="#ai-idea" class="text-stone-600 hover:text-emerald-600 transition">تطوير فكرتك ✨</a>
+                <a href="#contact" class="btn-primary px-5 py-2 rounded-lg text-sm font-bold">تواصل معي</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-2xl">☰</button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white p-4">
+            <a href="#about" class="block py-2 text-stone-600 hover:text-emerald-600 transition">عني</a>
+            <a href="#portfolio" class="block py-2 text-stone-600 hover:text-emerald-600 transition">أعمالي</a>
+            <a href="#services" class="block py-2 text-stone-600 hover:text-emerald-600 transition">خدماتي</a>
+            <a href="#ai-idea" class="block py-2 text-stone-600 hover:text-emerald-600 transition">تطوير فكرتك ✨</a>
+            <a href="#contact" class="block mt-2 py-2 text-center btn-primary rounded-lg">تواصل معي</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center hero-gradient">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold section-title leading-tight">
+                    خبير الحلول الرقمية المتكاملة
+                </h1>
+                <p class="mt-4 text-lg md:text-xl text-stone-600 max-w-3xl mx-auto">
+                    تطوير ويب، تصميم إبداعي، تسويق رقمي، وتحليل بيانات. أحول الأفكار إلى واقع رقمي ناجح.
+                </p>
+                <div class="mt-8 flex justify-center gap-4">
+                    <a href="#portfolio" class="btn-primary px-8 py-3 rounded-lg font-bold">اكتشف أعمالي</a>
+                    <a href="#contact" class="btn-secondary px-8 py-3 rounded-lg font-bold">اطلب خدمتك</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl section-title text-center">لمحة شخصية</h2>
+                <div class="mt-12 grid md:grid-cols-5 gap-12 items-center">
+                    <div class="md:col-span-3">
+                        <h3 class="text-2xl font-bold text-stone-800 mb-4">من أنا؟</h3>
+                        <p class="text-stone-600 leading-relaxed mb-4">
+                            مطور ويب مستقل، مسوق رقمي، ومحلل بيانات بخبرة تتجاوز 3 سنوات في تقديم حلول رقمية متكاملة. أجمع بين الخبرة التقنية في بناء مواقع الويب والأنظمة، والإبداع في تصميم تجارب المستخدم، والدقة في قيادة حملات التسويق الرقمي وتحليل البيانات لتحقيق أفضل النتائج.
+                        </p>
+                        <p class="text-stone-600 leading-relaxed">
+                            أؤمن بأن النجاح يكمن في التفاصيل، وألتزم بتقديم مشاريع عالية الجودة تلبي أهداف العميل وتتجاوز توقعاته، مع التركيز على التواصل الفعال والالتزام بالمواعيد.
+                        </p>
+                    </div>
+                    <div class="md:col-span-2">
+                        <div class="bg-stone-100 p-6 rounded-lg shadow-sm">
+                            <h4 class="text-xl font-bold text-stone-800 mb-4">المهارات الأساسية</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-center"><span class="ml-3 text-emerald-600">◆</span> تطوير ويب (PHP, JS, MySQL)</li>
+                                <li class="flex items-center"><span class="ml-3 text-emerald-600">◆</span> تصميم UI/UX (Figma, Adobe XD)</li>
+                                <li class="flex items-center"><span class="ml-3 text-emerald-600">◆</span> إدارة الحملات الإعلانية (Google, Meta)</li>
+                                <li class="flex items-center"><span class="ml-3 text-emerald-600">◆</span> تحليل البيانات (Power BI, Excel)</li>
+                                <li class="flex items-center"><span class="ml-3 text-emerald-600">◆</span> إدارة المتاجر الإلكترونية (Shopify, سلة)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl section-title text-center">معرض أعمالي</h2>
+                <p class="text-center mt-4 text-stone-600 max-w-2xl mx-auto">نظرة على بعض المشاريع التي قمت بتنفيذها والتي تبرز تنوع خبراتي.</p>
+                
+                <!-- Filters -->
+                <div class="flex justify-center flex-wrap gap-3 mt-10 portfolio-filter">
+                    <button data-filter="all" class="px-5 py-2 rounded-lg text-sm font-bold btn-secondary active">الكل</button>
+                    <button data-filter="dev" class="px-5 py-2 rounded-lg text-sm font-bold btn-secondary">تطوير ويب</button>
+                    <button data-filter="design" class="px-5 py-2 rounded-lg text-sm font-bold btn-secondary">تصميم متاجر</button>
+                    <button data-filter="marketing" class="px-5 py-2 rounded-lg text-sm font-bold btn-secondary">تسويق رقمي</button>
+                    <button data-filter="data" class="px-5 py-2 rounded-lg text-sm font-bold btn-secondary">تحليل بيانات</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div id="projects-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                    <!-- Project cards will be injected here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl section-title text-center">خدماتي</h2>
+                <p class="text-center mt-4 text-stone-600 max-w-2xl mx-auto">أقدم مجموعة متكاملة من الخدمات لمساعدتك على تحقيق أهدافك الرقمية.</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+                    <div class="text-center p-8 bg-stone-50 rounded-lg shadow-sm">
+                        <div class="text-4xl text-emerald-600 mb-4">💻</div>
+                        <h3 class="text-xl font-bold mb-2">تطوير ويب وأنظمة</h3>
+                        <p class="text-stone-600 text-sm">بناء مواقع وأنظمة مخصصة باستخدام أحدث التقنيات لضمان الأداء العالي والأمان.</p>
+                    </div>
+                    <div class="text-center p-8 bg-stone-50 rounded-lg shadow-sm">
+                        <div class="text-4xl text-emerald-600 mb-4">🛒</div>
+                        <h3 class="text-xl font-bold mb-2">تصميم متاجر إلكترونية</h3>
+                        <p class="text-stone-600 text-sm">إعداد وتصميم متاجر إلكترونية احترافية مع ربط بوابات الدفع والشحن.</p>
+                    </div>
+                    <div class="text-center p-8 bg-stone-50 rounded-lg shadow-sm">
+                        <div class="text-4xl text-emerald-600 mb-4">📈</div>
+                        <h3 class="text-xl font-bold mb-2">إدارة الحملات الإعلانية</h3>
+                        <p class="text-stone-600 text-sm">تخطيط وتنفيذ حملات إعلانية فعالة على مختلف المنصات لتحقيق أفضل عائد.</p>
+                    </div>
+                    <div class="text-center p-8 bg-stone-50 rounded-lg shadow-sm">
+                        <div class="text-4xl text-emerald-600 mb-4">📊</div>
+                        <h3 class="text-xl font-bold mb-2">تحليل وتصور البيانات</h3>
+                        <p class="text-stone-600 text-sm">بناء لوحات معلومات تفاعلية (Power BI) لتحويل بياناتك إلى قرارات ذكية.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Idea Refinement Section -->
+        <section id="ai-idea" class="py-20 bg-stone-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl section-title text-center">تطوير فكرتك مع الذكاء الاصطناعي ✨</h2>
+                <p class="text-center mt-4 text-stone-600 max-w-2xl mx-auto">أدخل فكرة مشروعك الأولية، ودع خبراتي المتكاملة بالإضافة إلى قوة الذكاء الاصطناعي تقدم لك رؤية حول كيفية تطويرها وتحويلها إلى نجاح.</p>
+                <div class="max-w-2xl mx-auto mt-12 bg-white p-8 rounded-lg shadow-md">
+                    <div class="mb-4">
+                        <label for="project-idea-input" class="block text-sm font-bold text-stone-700 mb-2">اكتب فكرة مشروعك هنا (مثال: متجر لبيع منتجات يدوية، نظام إدارة حجوزات)</label>
+                        <textarea id="project-idea-input" rows="6" class="w-full px-3 py-2 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="أرغب في إنشاء منصة تعليمية عبر الإنترنت..."></textarea>
+                    </div>
+                    <button id="generate-idea-btn" class="w-full btn-primary font-bold py-3 rounded-lg flex items-center justify-center">
+                        <span id="button-text">تطوير الفكرة ✨</span>
+                        <div id="loading-spinner" class="spinner ml-3 hidden"></div>
+                    </button>
+                    <div id="idea-output-container" class="mt-8 p-4 bg-stone-50 border border-stone-200 rounded-lg hidden">
+                        <h4 class="text-xl font-bold mb-3 text-stone-800">كيف يمكنني خدمة مشروعك؟</h4>
+                        <p id="idea-output" class="text-stone-700 leading-relaxed"></p>
+                    </div>
+                    <div id="error-message" class="mt-4 text-red-600 hidden">حدث خطأ أثناء معالجة طلبك. يرجى المحاولة مرة أخرى.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl section-title text-center">لنتحدث عن مشروعك</h2>
+                <p class="text-center mt-4 text-stone-600 max-w-2xl mx-auto">هل لديك فكرة أو مشروع؟ أنا هنا للمساعدة. تواصل معي الآن.</p>
+                <div class="max-w-xl mx-auto mt-12 bg-white p-8 rounded-lg shadow-md">
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-sm font-bold text-stone-700 mb-2">الاسم</label>
+                            <input type="text" id="name" class="w-full px-3 py-2 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-sm font-bold text-stone-700 mb-2">البريد الإلكتروني</label>
+                            <input type="email" id="email" class="w-full px-3 py-2 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-bold text-stone-700 mb-2">الرسالة</label>
+                            <textarea id="message" rows="5" class="w-full px-3 py-2 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full btn-primary font-bold py-3 rounded-lg">إرسال الرسالة</button>
+                    </form>
+                    <div class="text-center mt-8">
+                        <p class="text-stone-600">أو تواصل معي مباشرة عبر:</p>
+                        <a href="mailto:osamah.shahra@gmail.com" class="text-emerald-600 font-bold hover:underline">osamah.shahra@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-800 text-white py-10">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center gap-6 mb-6">
+                <a href="https://mostaql.com/u/Osamah_Shahra" target="_blank" class="text-stone-300 hover:text-white transition">مستقل</a>
+                <a href="https://khamsat.com/user/osamah_shahrah" target="_blank" class="text-stone-300 hover:text-white transition">خمسات</a>
+                <a href="https://kafiil.com/u/osamah_shahrah" target="_blank" class="text-stone-300 hover:text-white transition">كفيل</a>
+                <a href="https://www.linkedin.com/in/osamah-shahrah-421236323" target="_blank" class="text-stone-300 hover:text-white transition">لينكدإن</a>
+                <a href="https://github.com/Osamah-Shahrah" target="_blank" class="text-stone-300 hover:text-white transition">جيت هاب</a>
+            </div>
+            <p class="text-sm text-stone-400">&copy; 2025 | تم تصميمه وتطويره بواسطة أسامة شحره</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/967734619110" target="_blank" class="whatsapp-float">
+        &#x1F4AC; <!-- Unicode for speech bubble/message icon -->
+    </a>
+
+    <!-- Modal Structure -->
+    <div id="project-modal" class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 opacity-0 invisible">
+        <div class="modal-content bg-white w-full max-w-4xl max-h-[90vh] rounded-lg shadow-2xl overflow-y-auto transform scale-95">
+            <div class="sticky top-0 bg-white px-6 py-4 flex justify-between items-center border-b z-10">
+                <h3 id="modal-title" class="text-2xl font-bold section-title"></h3>
+                <button id="modal-close-btn" class="text-3xl text-stone-500 hover:text-stone-800">&times;</button>
+            </div>
+            <div class="p-8">
+                <div id="modal-image-container" class="mb-6">
+                    <!-- Image will be injected here -->
+                </div>
+                <h4 class="text-xl font-bold mb-2">عن المشروع</h4>
+                <p id="modal-description" class="text-stone-600 leading-relaxed mb-6"></p>
+                <h4 class="text-xl font-bold mb-3">التقنيات المستخدمة</h4>
+                <div id="modal-tech" class="flex flex-wrap gap-2 mb-8">
+                    <!-- Tech tags will be injected here -->
+                </div>
+                <a id="modal-link" href="#" target="_blank" class="inline-block btn-primary px-6 py-2 rounded-lg font-bold">
+                    زيارة المشروع
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Project Data - IMPORTANT: Consider replacing placehold.co images with your actual project screenshots from Google Sites or other sources.
+            const projects = [
+                {
+                    id: 1,
+                    title: 'متجر ثينك ثرين للأثاث',
+                    category: 'design',
+                    thumbnail: 'https://placehold.co/600x400/a3e635/1c1917?text=Think+Green', /* Replace with actual image link from your Google Site if possible */
+                    image: 'https://placehold.co/1200x800/a3e635/1c1917?text=Think+Green+Store', /* Replace with actual image link */
+                    description: 'تطوير وإعداد متكامل لمتجر إلكتروني احترافي متخصص في الأثاث. يشمل العمل تصميم واجهة وتجربة مستخدم جذابة، إعداد بوابات الدفع وشركات الشحن، وربط كافة الخدمات الأساسية لضمان تجربة تسوق سلسة. بالإضافة إلى إدارة حملات إعلانية لتحقيق أفضل النتائج.',
+                    tech: ['تصميم متاجر', 'UI/UX', 'إدارة إعلانات', 'Shopify'],
+                    liveLink: 'https://thinkgreen.sa/'
+                },
+                {
+                    id: 2,
+                    title: 'نظام إدارة الشحن (البركة للنقل)',
+                    category: 'dev',
+                    thumbnail: 'https://placehold.co/600x400/38bdf8/1c1917?text=Al+Baraka+System', /* Replace with actual image link */
+                    image: 'https://placehold.co/1200x800/38bdf8/1c1917?text=Logistics+Dashboard', /* Replace with actual image link */
+                    description: 'قيادة عملية تطوير ونشر نظام متكامل لإدارة اللوجستيات والشحن. نجح النظام في تحسين كفاءة العمل بنسبة 80% مقارنة بالعمليات اليدوية، من خلال إدارة آلاف سجلات الشحنات، وتطوير وحدات مصادقة آمنة، ودمج إشعارات SMS والبريد الإلكتروني.',
+                    tech: ['PHP', 'JavaScript', 'MySQL', 'تطوير أنظمة', 'Bootstrap'],
+                    liveLink: 'https://albaraka.wuaze.com/index.php'
+                },
+                {
+                    id: 3,
+                    title: 'لوحة تحكم بيانات (INTERSOS)',
+                    category: 'data',
+                    thumbnail: 'https://placehold.co/600x400/f9a8d4/1c1917?text=Power+BI', /* Replace with actual image link */
+                    image: 'https://placehold.co/1200x800/f9a8d4/1c1917?text=Data+Analytics+Dashboard', /* Replace with actual image link */
+                    description: 'تصميم وتطبيق لوحات معلومات آلية وتفاعلية باستخدام Power BI لتحويل البيانات المعقدة إلى رؤى قابلة للتنفيذ. المشروع قلل وقت التحليل بنسبة 30% ومكّن من اتخاذ قرارات آنية أثرت على أكثر من 60,000 مستفيد.',
+                    tech: ['Power BI', 'تحليل بيانات', 'تصور البيانات', 'Excel'],
+                    liveLink: 'https://app.powerbi.com/view?r=eyJrIjoiM2VhMGEwZGQtMDMyNi00MjZjLWIxYTAtMmM2M2ZjZGZmMjgzIiwidCI6ImIzYTkwNjYzLWM1MTItNDlmMS04MDgwLTMyNmYwYTRiYTQzMCIsImMiOjl9'
+                },
+                {
+                    id: 4,
+                    title: 'متجر رويا للمجوهرات',
+                    category: 'design',
+                    thumbnail: 'https://placehold.co/600x400/fcd34d/1c1917?text=Roya+Jewelry', /* Replace with actual image link */
+                    image: 'https://placehold.co/1200x800/fcd34d/1c1917?text=Roya+Jewelry+Store', /* Replace with actual image link */
+                    description: 'تصميم وإعداد متجر إلكتروني فاخر للمجوهرات والإكسسوارات. تم التركيز على تصميم يعكس فخامة المنتجات مع تجربة مستخدم سهلة، وربط المتجر بمنصات التواصل الاجتماعي لإدارة الحملات التسويقية.',
+                    tech: ['تصميم متاجر', 'UI/UX', 'سلة', 'تسويق رقمي'],
+                    liveLink: 'https://royasa.com/'
+                },
+                 {
+                    id: 5,
+                    title: 'إدارة حملات إعلانية',
+                    category: 'marketing',
+                    thumbnail: 'https://placehold.co/600x400/fb923c/1c1917?text=Ad+Campaigns', /* Replace with actual image link */
+                    image: 'https://placehold.co/1200x800/fb923c/1c1917?text=Digital+Marketing', /* Replace with actual image link */
+                    description: 'تصميم وتنفيذ حملات إعلانية مستهدفة عبر منصات متعددة مثل Google, Meta, TikTok, و Snapchat. أركز على تحليل الجمهور، تحسين الإنفاق الإعلاني (ROAS)، وتقديم تقارير أداء دورية لتحقيق أهداف العملاء سواء كانت زيادة المبيعات أو الوعي بالعلامة التجارية.',
+                    tech: ['Google Ads', 'Meta Ads', 'TikTok Ads', 'تحليل الأداء'],
+                    liveLink: '#contact' /* This links to the contact section within the SPA */
+                },
+                {
+                    id: 6,
+                    title: 'موقع مؤسسة محاماة',
+                    category: 'dev',
+                    thumbnail: 'https://placehold.co/600x400/9ca3af/1c1917?text=Wusata+Law', /* Replace with actual image link */
+                    image: 'https://placehold.co/1200x800/9ca3af/1c1917?text=Law+Firm+Website', /* Replace with actual image link */
                     description: 'تصميم وتطوير موقع ويب تعريفي احترافي لمؤسسة محاماة، مع التركيز على عرض الخدمات القانونية وفريق العمل بطريقة واضحة ومنظمة، مما يعزز التواجد الرقمي للمؤسسة ويبني الثقة مع العملاء.',
                     tech: ['WordPress', 'تصميم ويب', 'CSS', 'PHP'],
                     liveLink: 'https://wusata-sa.com/'
